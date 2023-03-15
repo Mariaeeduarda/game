@@ -12,7 +12,6 @@ const jump = () => {
 };
 
 const updateGame = () => {
-  // atualiza a tela do jogo com o número de vidas e a pontuação atual
   const heartElements = document.querySelectorAll(".heart");
   for (let i = 0; i < heartElements.length; i++) {
     if (i < numVidas) {
@@ -51,7 +50,7 @@ const loopGame = setInterval(() => {
       mario.style.marginLeft = "45px";
       clearInterval(loopGame);
     }
-  } else if (numVidas > 0) { // added a condition to check if numVidas is greater than 0 before updating the game
+  } else if (numVidas > 0) {
     updateGame();
   } else {
     clearInterval(loopGame);
