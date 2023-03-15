@@ -1,4 +1,4 @@
-*{
+/* *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
@@ -72,3 +72,129 @@
         bottom: 0%;
     }
 }
+ */
+ * {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.game {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 100px solid rgb(24,174,24);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.pipe-game {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+
+.super-mario{
+    width:150px;
+    position: absolute;
+    bottom: 0;
+}
+
+.super-mario:hover {
+    filter: brightness(1.2);
+}
+
+.jump-mario {
+    animation: mario-animation 500ms ease-out;
+}
+
+.cloud-game{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
+
+.num-vidas {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #030303;
+    text-align: center;
+}
+
+.heart-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.heart {
+    width: 30px;
+    height: auto;
+    margin-left: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .pipe-game {
+        width: 12%;
+    }
+
+    .super-mario{
+        width: 20%;
+    }
+
+    .heart {
+        width: 20px;
+        margin-left: 3px;
+    }
+
+    .num-vidas {
+        font-size: 1.5em;
+    }
+}
+
+@keyframes pipe-animation{
+    from{
+        right: -8%;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation{
+    from{
+        right: -100%;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes mario-animation{
+    0% {
+        bottom: 0;
+    }
+    40% {
+        bottom: 18%;
+    }
+    50% {
+        bottom: 18%;
+    }
+    60% {
+        bottom: 18%;
+    }
+    70% {
+        bottom: 18%;
+    }
+    100% {
+        bottom: 0%;
+    }
+}
+
