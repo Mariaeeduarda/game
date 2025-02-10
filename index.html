@@ -1,53 +1,88 @@
-<!-- <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
-        <meta name="viewport" content="Width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="./css/style.css" />
-        <title>Joguinho incrível</title>
-    </head>
-    <body>
-        <div class="game">
-            <img src="./imagens/clouds-gamer.png" class="cloud-game"/>
-            <img src="./imagens/super-mario.gif" class="super-mario"/>
-            <img src="./imagens/pipe-game.png" class="pipe-game"/>
-            <div class="num-vidas">Vidas:</div>
-            <div class="heart-container">
-                <img class="heart" src="./imagens/coracao.png" alt="Coração">
-                <img class="heart" src="./imagens/coracao.png" alt="Coração">
-                <img class="heart" src="./imagens/coracao.png" alt="Coração">
-            </div>
-        </div>
-        <script src="./script/script.js"></script>
-    </body>
-    
-</html> -->
-
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
-        <meta name="viewport" content="Width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="Jogue o incrível jogo do Super Mario"/>
-        <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="./css/style.css" />
-        <title>Joguinho incrível</title>
-    </head>
-    <body>
-        <div class="game">
-            <img src="./imagens/clouds-gamer.png" class="cloud-game" alt="Nuvens do jogo">
-            <img src="./imagens/super-mario.gif" class="super-mario" alt="Imagem animada do Super Mario">
-            <img src="./imagens/pipe-game.png" class="pipe-game" alt="Imagem do cano do jogo">
-            <div class="num-vidas">Vidas:</div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogue o incrível jogo do Super Mario - Pule obstáculos e colete pontos nesta aventura divertida!">
+    <meta name="keywords" content="super mario, jogo, game, mario bros, nintendo">
+    <meta name="author" content="Seu Nome">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./imagens/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./imagens/apple-touch-icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <title>Super Mario - Aventura Incrível</title>
+</head>
+<body>
+    <!-- Menu Inicial -->
+    <div class="start-screen">
+        <h1>Super Mario</h1>
+        <button class="start-button">Iniciar Jogo</button>
+        <div class="instructions">
+            <p>Use a barra de espaço ou toque na tela para pular</p>
+            <p>Desvie dos obstáculos e sobreviva!</p>
+        </div>
+    </div>
+
+    <!-- Container Principal do Jogo -->
+    <div class="game">
+        <!-- Elementos de UI -->
+        <div class="game-ui">
+            <div class="score-container">
+                <div class="num-vidas">Vidas: 3</div>
+                <div class="pontuacao">Pontuação: 0</div>
+                <div class="high-score">Recorde: 0</div>
+            </div>
+            
             <div class="heart-container">
                 <img class="heart" src="./imagens/coracao.png" alt="Coração">
                 <img class="heart" src="./imagens/coracao.png" alt="Coração">
                 <img class="heart" src="./imagens/coracao.png" alt="Coração">
             </div>
         </div>
-        <script src="./script/script.js" defer></script>
-    </body>
-    
+
+        <!-- Elementos do Cenário -->
+        <div class="background-elements">
+            <img src="./imagens/clouds-gamer.png" class="cloud-game" alt="Nuvens do jogo">
+            <img src="./imagens/mountains.png" class="mountains" alt="Montanhas do cenário" loading="lazy">
+        </div>
+
+        <!-- Personagem e Obstáculos -->
+        <img src="./imagens/super-mario.gif" class="super-mario" alt="Super Mario">
+        <img src="./imagens/pipe-game.png" class="pipe-game" alt="Cano do jogo">
+
+        <!-- Efeitos Visuais -->
+        <div class="particles"></div>
+    </div>
+
+    <!-- Tela de Game Over -->
+    <div class="game-over-screen" style="display: none;">
+        <h2>Game Over!</h2>
+        <div class="final-score">Pontuação: <span>0</span></div>
+        <div class="high-score-display">Recorde: <span>0</span></div>
+        <button class="restart-button">Jogar Novamente</button>
+    </div>
+
+    <!-- Áudio -->
+    <audio id="jumpSound" src="./sounds/jump.mp3" preload="auto"></audio>
+    <audio id="coinSound" src="./sounds/coin.mp3" preload="auto"></audio>
+    <audio id="gameOverSound" src="./sounds/gameover.mp3" preload="auto"></audio>
+    <audio id="backgroundMusic" src="./sounds/theme.mp3" loop preload="auto"></audio>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Carregando...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script/script.js" defer></script>
+</body>
 </html>
